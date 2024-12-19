@@ -1,17 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secret Message</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Enter Your Password</h1>
-    <textarea id="password" placeholder="Type your password here..."></textarea>
-    <br>
-    <button onclick="checkPassword()">Submit</button>
-    <div id="message"></div>
-    <script src="script.js"></script>
-</body>
-</html>
+/* Allgemeine Einstellungen */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    overflow: hidden;
+}
+
+/* Container für Inhalt */
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Titel */
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #00bcd4;
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Animiertes Leuchten */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4;
+    }
+    to {
+        text-shadow: 0 0 20px #00bcd4, 0 0 40px #00bcd4;
+    }
+}
+
+/* Textarea mit Animation bei Mausbewegung */
+.textarea-container {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    margin: 20px auto;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #00bcd4;
+    border-radius: 10px;
+    background: #101010;
+    color: #00bcd4;
+    outline: none;
+    resize: none;
+    transition: 0.3s ease;
+}
+
+textarea:hover, textarea:focus {
+    background: #202020;
+    box-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4;
+}
+
+/* Mausbewegung-Effekt */
+.textarea-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 188, 212, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+textarea:hover + ::after {
+    opacity: 1;
+}
+
+/* Button */
+button {
+    background: #00bcd4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #007a8d;
+    transform: translateY(-3px);
+}
+
+/* Nachricht */
+#message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #00ffcc;
+}
