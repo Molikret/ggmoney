@@ -1,5 +1,6 @@
 // Passwort-Nachrichten-Kombinationen
 const secrets = {
+    "9gW34e": "5x7zT - Code | 50.000$ - Gewinn",
     "password123": "Das ist deine geheime Nachricht für Passwort123!",
     "helloWorld": "Hier ist eine andere geheime Nachricht!",
     "openSesame": "Das Passwort öffnet das Geheimnis!",
